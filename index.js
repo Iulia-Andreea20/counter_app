@@ -13,8 +13,8 @@ function decrement() {
         count -= 1
         countEl.innerHTML = count
     }
-    else {
-        errorDecrementation.textContent += "You can't decrement below 0 the counter!"
+    else if (count == 0) {
+        errorDecrementation.textContent = "You can't decrement below 0 the counter!"
     }
 }
 function save() {
@@ -26,6 +26,7 @@ function save() {
     }
     //It works fine with innerHTML, but not with in innerText
 
+    countEl.innerHTML = 0
     count = 0
 }
 // *? Implemet the hello user in the app
