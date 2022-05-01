@@ -4,7 +4,7 @@ let saveEl = document.getElementById("save-el")
 let errorDecrementation = document.getElementById("error-dec")
 
 function increment() {
-
+    errorDecrementation.textContent = ""
     count += 1
     countEl.innerHTML = count
 }
