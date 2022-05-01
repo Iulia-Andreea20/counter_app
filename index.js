@@ -1,6 +1,8 @@
 let count = 0
 let countEl = document.getElementById("count-el")
 let saveEl = document.getElementById("save-el")
+let errorDecrementation = document.getElementById("error-dec")
+
 function increment() {
 
     count += 1
@@ -12,12 +14,16 @@ function decrement() {
         countEl.innerHTML = count
     }
     else {
-        console.log("The counter is already 0!")
+        errorDecrementation.textContent += "You can't decrement below 0 the counter!"
     }
 }
 function save() {
-
-    saveEl.textContent += count + " - "
+    if (saveEl.textContent == "Previous entires: ") {
+        saveEl.textContent += count
+    }
+    else {
+        saveEl.textContent += " - " + count
+    }
     //It works fine with innerHTML, but not with in innerText
 
     count = 0
